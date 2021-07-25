@@ -81,11 +81,10 @@ Registros de presencia
 column {data-width=60}
 -----------------------------------------------------------------------
 
-### Registros de presencia {.value-box}
+### Cantidad de registros {.value-box}
 ```{r}
 valueBox(value = nrow(orquideas), 
          caption = "Registros de presencia", 
-         icon = "fas fa-fan",
          color = "#906dbd"
 )
 ```
@@ -93,20 +92,21 @@ valueBox(value = nrow(orquideas),
 
 ### Cantidad de géneros {.value-box}
 ```{r}
-input <- orquideas %>%
+input <
+  orquideas %>%
   filter(!is.na(genus) & genus != "") %>%
   group_by(genus) %>% 
   summarise(registros = n())
 
-valueBox(value = nrow(input), 
-         icon = "fas fa-fan", 
+valueBox(value = nrow(input),
          color = "#bb6dbd")
 ```
 
 
 ### Cantidad de especies {.value-box}
 ```{r}
-input2 <- orquideas %>%
+input2 <-
+  orquideas %>%
   filter(!is.na(species) & species != "") %>%
   group_by(species) %>% 
   summarise(registros = n())
@@ -141,7 +141,7 @@ orquideas %>%
 ```
 
 
-### Gráfico pastel: especies por cantidad de registros
+### Gráfico pastel: cantidad de registros por especie
 
 ```{r pie-chart, warning=FALSE, message=FALSE}
 # Especies con mayor cantidad de registros
@@ -361,6 +361,6 @@ leaflet() %>%
     values = values(orquideas_raster_registros),
     position = "bottomright",
     title = "Cantidad de <br>especies<br>por celda",
-    group = "Registros-Orquideas"
+    group = "Registros de orquídeas"
   )
 ```
