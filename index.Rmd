@@ -78,7 +78,7 @@ orquideas <-
 Registros de presencia
 =======================================================================
 
-column {data-width=70}
+column {data-width=60}
 -----------------------------------------------------------------------
 
 ### Registros de presencia {.value-box}
@@ -180,6 +180,9 @@ plot_ly(visualizacion_orquideas, labels =  ~species, values = ~registros, type =
   config(locale = "es")
 ```
 
+row {data-height=10}
+-----------------------------------------------------------------------
+**Trabajo final realizado por:** Abigail Grijalba y Gabriela Becerra        **Curso:** Procesamiento de datos geográficos
 
 Mapa agrupado (clustered) de registros de presencia
 =======================================================================
