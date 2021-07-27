@@ -269,7 +269,6 @@ orquideas %>%
 Mapa raster de la cantidad de especies por celda
 ================================================================================
 ```{r}
-# Capa leaflet raster
 # Obtención de la capa de altitud
 alt <-
   raster::getData(
