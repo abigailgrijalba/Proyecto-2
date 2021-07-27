@@ -92,7 +92,7 @@ valueBox(value = nrow(orquideas),
 
 ### Cantidad de géneros {.value-box}
 ```{r}
-input <
+input <-
   orquideas %>%
   filter(!is.na(genus) & genus != "") %>%
   group_by(genus) %>% 
@@ -124,7 +124,7 @@ row {data-height=400}
 ### Tabla de registros de presencia
 
 ```{r data-table, message=FALSE, warning=FALSE}
-
+# Tabla de registros de presencia
 orquideas %>%
   st_drop_geometry() %>%
   select(species, eventDate, stateProvince, canton) %>%
@@ -176,7 +176,6 @@ plot_ly(visualizacion_orquideas, labels =  ~species, values = ~registros, type =
         showlegend = TRUE,
         marker = list(line = list(color = "#ffffff", width = 1))
 ) %>%
-  layout(title = 'Registro de orquídeas en Costa Rica') %>%
   config(locale = "es")
 ```
 
@@ -222,6 +221,7 @@ orquideas %>%
     group = "Registros por provincias" 
     ) %>%
   addCircleMarkers(
+    data = orquideas,
     stroke = F,
     radius = 4,
     fillColor = "#c90094",
